@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        /* Ensure the body takes up the full height and centers the content */
+        body {
+            background: rgb(17, 17, 17);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        /* Style for the main container */
+        .container {
+            text-align: center;
+            font-family: Roboto, sans-serif;
+        }
+
+        /* Centering the image slider */
+        .image-slider {
+            position: relative;
+            display: inline-block;
+            line-height: 0;
+            margin: 0 auto;
+        }
+        
+        .image-slider img {
+            user-select: none;
+            max-width: 800px;
+        }
+        
+        .image-slider > div {
+            position: absolute;
+            width: 25px;
+            max-width: 100%;
+            overflow: hidden;
+            resize: horizontal;
+        }
+        
+        .image-slider > div:before {
+            content: '';
+            display: block;
+            width: 13px;
+            height: 13px;
+            overflow: hidden;
+            position: absolute;
+            resize: horizontal;
+            right: 3px;
+            bottom: 3px;
+            background-clip: content-box;
+            background: linear-gradient(-45deg, black 50%, transparent 0);
+            -webkit-filter: drop-shadow(0 0 2px black);
+            filter: drop-shadow(0 0 2px black);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h3 style="color: aliceblue">Image modification via denoising techniques</h3>
+        <div class="image-slider">
+            <div>
+                <img src="assets/cinematic-lora.png" alt="LORA"/>
+            </div>
+            <img src="assets/noise.png" alt="No LORA"/>
+        </div>
+    </div>
+</body>
+
+</html>
